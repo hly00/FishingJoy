@@ -4,7 +4,7 @@
 //
 //  @ Project : FishingJoy
 //  @ File Name : StaticData.cpp
-//  @ Date : 2017/9/29
+//  @ Date : 2017/10/27
 //  @ Author : 211506170
 //
 //
@@ -28,42 +28,42 @@ void StaticData::purge()
 	CC_SAFE_RELEASE_NULL(g_sharedStaticData);
 }
 
-int StaticData::intValueFromKey(const string& key) 
+int StaticData::intValueFromKey(string key) 
 {
-	return _dictionary->valueForKey(key.c_str())->intValue();
+	return _dictionary->valueForKey(key)->intValue();
 }
 
-const char* StaticData::stringValueFromKey(const string& key) 
+const char* StaticData::stringValueFromKey(string key) 
 {
-	return _dictionary->valueForKey(key.c_str())->getCString();
+	return _dictionary->valueForKey(key)->getCString();
 }
 
-float StaticData::floatValueFromKey(const string& key) 
+float StaticData::floatValueFromKey(string key) 
 {
-	return _dictionary->valueForKey(key.c_str())->floatValue();
+	return _dictionary->valueForKey(key)->floatValue();
 }
 
 //根据键值得到bool类型数据
-bool StaticData::booleanFromKey(const string& key)
+bool StaticData::booleanFromKey(string key)
 {
-	return _dictionary->valueForKey(key.c_str())->boolValue();
+	return _dictionary->valueForKey(key)->boolValue();
 }
 
 //根据键值得到point类型数据
-CCPoint StaticData::pointFromKey(const string& key) 
+CCPoint StaticData::pointFromKey(string key) 
 {
-	return CCPointFromString(_dictionary->valueForKey(key.c_str())->getCString());
+	return CCPointFromString(_dictionary->valueForKey(key)->getCString());
 }
 
 //根据键值得到rect类型数据
-CCRect StaticData::rectFromKey(const string& key) 
+CCRect StaticData::rectFromKey(string key) 
 {
-	return CCRectFromString(_dictionary->valueForKey(key.c_str())->getCString());
+	return CCRectFromString(_dictionary->valueForKey(key)->getCString());
 }
 
-CCSize StaticData::sizeFromKey(const string& key) 
+CCSize StaticData::sizeFromKey(string key) 
 {
-	return CCSizeFromString(_dictionary->valueForKey(key.c_str())->getCString());
+	return CCSizeFromString(_dictionary->valueForKey(key)->getCString());
 }
 
 bool StaticData::init() 
@@ -84,4 +84,3 @@ StaticData::StaticData()
 {
 	_staticFileName = STATIC_DATA_FILENAME;
 }
-

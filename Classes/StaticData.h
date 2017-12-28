@@ -4,8 +4,8 @@
 //
 //  @ Project : FishingJoy
 //  @ File Name : StaticData.h
-//  @ Date : 2017/9/29
-//  @ Author : 211506170
+//  @ Date : 2017/10/27
+//  @ Author : 2115061170
 //
 //
 
@@ -33,13 +33,13 @@ class StaticData:
 public:
 	static StaticData* sharedStaticData();
 	static void purge();
-	int intValueFromKey(const string& key);
-	const char* stringValueFromKey(const string& key);
-	float floatValueFromKey(const string& key);
-	bool booleanFromKey(const string& key);
-	CCPoint pointFromKey(const string& key);
-	CCRect rectFromKey(const string& key);
-	CCSize sizeFromKey(const string& key);
+	int intValueFromKey(string key);
+	const char* stringValueFromKey(string key);
+	float floatValueFromKey(string key);
+	bool booleanFromKey(string key);
+	CCPoint pointFromKey(string key);
+	CCRect rectFromKey(string key);
+	CCSize sizeFromKey(string key);
 protected:
 	CCDictionary* _dictionary;
 	string _staticFileName;
